@@ -12,12 +12,13 @@ html {
 
 #header {
     color: white;
+    text-align: center
 }
 
 #header2 {
     color: white;
+    text-align: center
 }
 
-#container {
-    background: url(../images/starwarswarp.jpg);
-}
+
+
