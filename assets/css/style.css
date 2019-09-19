@@ -18,3 +18,6 @@ html {
     color: white;
 }
 
+#container {
+    background: url(../images/starwarswarp.jpg);
+}
