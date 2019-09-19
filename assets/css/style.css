@@ -1,0 +1,20 @@
+.body {
+    background: url(../images/swbackground.jpg);
+    background-image: black;
+    background-color: white;
+    font-family: 'Geostar Fill', cursive;
+    font-size: 24px;
+}
+/* Attempted to use a curor image change but couldn't get it to work */
+html {
+	cursor: url(../images/lightsaber.png), auto; 
+}
+
+#header {
+    color: white;
+}
+
+#header2 {
+    color: white;
+}
+
