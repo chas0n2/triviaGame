@@ -1,5 +1,6 @@
-$(document).ready(function() {
-
+    $(document).ready(function () {
+        // $(‘#’).hide();
+       
 // variables for initial time, and question count
 var questionCount = 0;
 var timer = 25;
@@ -9,92 +10,67 @@ var incorrect = 0;
 
 
 //Still need to create functions to start the game on button click.
-//Need to create code for 
+// I would like the game to display the list of questions then give you a timer to choose the correct answer.
+
+
 
 // question and answer array
 var questions = [
     {// question 1
-        question: "What is the name of the ship in the picture? ",
+        questions: "What is the name of the ship in the picture?",
         choices: ["The Slaver", "Slave I", "Millennium Falcon", "X-Wing"],
-        correctA: "Slave I",
-        image: " "
+        correctA: "Slave I"
+        
     },
     {//question 2
-        question: "Who was the leader of the Empire? ",
+        questions: "Who was the leader of the Empire?",
         choices: ["Darth Vader", "Leia Organa", "Grand Moff Tarkin", "Sheev Palpatine"],
-        correctA: " ",
-        image: " "
+        correctA: "Sheev Palpatine",
+        
     },
     {//question 3
-        question: "Which movie was the second Star Wars film? ",
+        questions: "Which was the second Star Wars film?",
         choices: ["A New Hope", "A Phantom Menace", "Empire Strikes Back", "Rise of Skywalker"],
-        correctA: " ",
-        image: " "
+        correctA: "Empire Strikes Back",
+        
     },
     {//question 4
-        question: " ",
-        choices: [" "],
-        correctA: " ",
-        image: " "
+        questions: "Which order brought about the death of the Jedi?",
+        choices: ["Order 55", "Order 66", "Order 33", "Order a burger"],
+        correctA: "Order 66",
+        
     },
-    {//question 5
-        question: " ",
-        choices: [" "],
-        correctA: " ",
-        image: " "
-    },
-    {//question 6
-        question: " ",
-        choices: [" "],
-        correctA: " ",
-        image: " "
-    },
-    {//question 7
-        question: " ",
-        choices: [" "],
-        correctA: " ",
-        image: " "
-    },
-    {//question 8
-        question: " ",
-        choices: [" "],
-        correctA: " ",
-        image: " "
-    },
-    {//question 9
-        question: " ",
-        choices: [" "],
-        correctA: " ",
-        image: " "
-    },
-    {//question 10
-        question: " ",
-        choices: [" "],
-        correctA: " ",
-        image: " "
-    },
-]
+    ]
+    
+    $("#Start").on("click", function() {
+        for (i = 0; i < questions.length; i++) {
+           var questionHtml = buildQuestion(questions[i])
+            $("#gameUi").append(questionHtml)
+          }
+          $("#Start").hide();
+    }) 
+    
+    function buildQuestion(question) {
+        var questionContainer = $("<div></div>")
+        questionContainer.append(`<div class="">${question.questions}</div>`)
+        for (i = 0; i < question.choices.length; i++) {
+            var choicesHtml = $(`<div >${question.choices[i]}</div>`)
+            if (question.choices[i] === question.correctA) {
+                choicesHtml.attr("correct", true)
+            }
+            questionContainer.append(choicesHtml)
+        }
+        return questionContainer
+    }
+
+
 });
 
 //creating questions and question count
 
-function questionContent() {
-    $("#gameUi").append("<p><strong>" +
-        questions[questionsCount].question +
-        //Confusing with double quotes on different elements, classes, and variables using single quotes.
-        "</p><p class='choices'>" +
-        questions[questionCount].choices[0] +
-        "</p><p class='choices'>" + 
-        questions[questionCount].choices[1] + 
-        "</p><p class='choices'>" + 
-        questions[questionCount].choices[2] +
-        "</p><p class='choices'>" + 
-        questions[questionCount].choices[3] + 
-        "</strong></p>");
-}
-//<div class="jumbotron text-center" id="gameUi">
-// This is to start the game using p-tags and how much time you have at start
-function startGame() {
-    $("#gameUi").html("<p>You have <span id='time'>" + time + "</span> Second left!</p>");
-    $("#start")    
-}
+
+ 
+    
+
+  
+

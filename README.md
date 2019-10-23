@@ -1,2 +1,2 @@
-# triviaGame
+# Trivia Game
 Star Wars Trivia
