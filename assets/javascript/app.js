@@ -113,7 +113,7 @@ let trivia = [
     let interval;
     
     //unchanging variables
-    const time = 10;
+    const time = 15;
     const timerDiv = $('<div class="timer">');
     const questionDiv = $('<div class="question">');
     const answersDiv = $('<div class="answers">');
@@ -215,7 +215,7 @@ let trivia = [
             $(answersDiv).append(trivia[currentIndex].answer2);
             $(answersDiv).append(trivia[currentIndex].answer3);
     
-            intervalId = setInterval(countDown, 1000);
+            intervalId = setInterval(countDown, 5000);
     
             // THe user clicked on an answer...
             $(document).on('click', '.btn', function () {
